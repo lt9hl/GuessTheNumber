@@ -30,7 +30,7 @@ bot.command('joke', async (ctx) => {
 let randomNum = 0;
 bot.command("play", async (ctx) => {
     randomNum = Math.floor(Math.random() * (600 - 1 + 1)) + 1;
-    await ctx.reply('Число загадано. Игра началась..');
+    await ctx.reply('Я загадал число! Игра началась!');
   });
 
     bot.on("message", async (ctx) => {
@@ -38,12 +38,12 @@ bot.command("play", async (ctx) => {
         let text = Number(ctx.msg.text);
         if(randomNum != 0 ){
         if (text < randomNum){
-            await ctx.reply('Загаданное число больше');}  
+            await ctx.reply('Больше');}  
         else if (text > randomNum){
-            await ctx.reply('Загаданное число меньше');}
+            await ctx.reply('Меньше');}
         else {
             randomNum = 0;
-            await ctx.reply('Вы выиграли!\nПоздравляем!');
+            await ctx.reply('Вы угадали');
         } 
         }
         
